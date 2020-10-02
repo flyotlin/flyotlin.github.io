@@ -19,7 +19,7 @@ N, M
 題目Input: N-M
 
 希望Output:所有可能的N
-
+<!-- more -->
 首先從數學式著手 M = ( N - (N%10) ) / 10
 
 題目給的Input: N-M = N - ( N - (N%10) ) / 10

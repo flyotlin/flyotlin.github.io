@@ -1,15 +1,17 @@
 ---
 title: Xrandr — Linux螢幕方向設定教學
+date: 2020/09/13
 tags: Linux
 ---
 
 不知道大家有沒有過打開ubuntu之後，發現整個螢幕的顯示方向從原本的水平變成垂直，或者是方向整個不對的經驗。像是下面這樣…
 
 ![fdfd](https://imgur.com/a/fvFLX7n)
-
+<!-- more -->
 在查過一些網路上的資料之後，這個原因或許是因為筆電裡面內建的陀螺儀在搞鬼。
 
 如果要關掉ubuntu中內建的自動旋轉螢幕方向，可以點右上角的選單(本圖的桌面環境為gnome，其他的像KDE、Unity可能要再另外找找看)，紅色圈起來的那個按鈕就是控制ubuntu自動旋轉螢幕方向的元兇了!
+
 
 ![fdfd](https://imgur.com/a/fvFLX7n)
 
