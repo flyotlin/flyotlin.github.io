@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/bt5CMN2.png">
 <meta property="article:published_time" content="2020-10-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-02T16:49:00.341Z">
+<meta property="article:modified_time" content="2020-10-02T16:54:28.981Z">
 <meta property="article:author" content="FlyotLin">
 <meta property="article:tag" content="組合語言">
 <meta property="article:tag" content="assembly">
@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-10-02 00:00:00 / 修改時間：16:49:00" itemprop="dateCreated datePublished" datetime="2020-10-02T00:00:00+00:00">2020-10-02</time>
+              <time title="創建時間：2020-10-02 00:00:00 / 修改時間：16:54:28" itemprop="dateCreated datePublished" datetime="2020-10-02T00:00:00+00:00">2020-10-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,7 +218,7 @@
 
       
         <p>大二上的組合語言學的是windows assembly，組譯器(assembler)為MASM。之後這系列的文章會用筆記的形式記錄一下組語大概學了些什麼東西。</p>
-<h2 id="暫存器Register"><a href="#暫存器Register" class="headerlink" title="暫存器Register"></a>暫存器Register</h2><p>位於cpu內，要做任何算術運算都需要把值放到暫存器內，再進行進一步的運算。<br><img src="https://i.imgur.com/bt5CMN2.png"></p>
+<h1 id="暫存器Register"><a href="#暫存器Register" class="headerlink" title="暫存器Register"></a>暫存器Register</h1><p>位於cpu內，要做任何算術運算都需要把值放到暫存器內，再進行進一步的運算。<br><img src="https://i.imgur.com/bt5CMN2.png"></p>
 <h3 id="General-Purpose-Register"><a href="#General-Purpose-Register" class="headerlink" title="General Purpose Register"></a>General Purpose Register</h3><ul>
 <li>eax </li>
 <li>ebx</li>
@@ -228,7 +228,7 @@
 </li>
 </ul>
 <h3 id="Segment-Register"><a href="#Segment-Register" class="headerlink" title="Segment Register"></a>Segment Register</h3><p>之後學到會再補充</p>
-<h2 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h2><p>宣告在.data的directive內。存放位置與暫存器不同，位於記憶體Memory(RAM)內，而非CPU。</p>
+<h1 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h1><p>宣告在.data的directive內。存放位置與暫存器不同，位於記憶體Memory(RAM)內，而非CPU。</p>
 <p>宣告方式為  <strong>變數名稱</strong>    <strong>變數資料型態</strong>    <strong>數值</strong></p>
 <ul>
 <li>資料型態: 下面有簡單介紹</li>
@@ -240,7 +240,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="資料型態"><a href="#資料型態" class="headerlink" title="資料型態"></a>資料型態</h2><p>mov對於資料型態大小有所限制，也就是不能直接mov比較小的數值型態到比較大的數值型態中。</p>
+<h1 id="資料型態"><a href="#資料型態" class="headerlink" title="資料型態"></a>資料型態</h1><p>mov對於資料型態大小有所限制，也就是不能直接mov比較小的數值型態到比較大的數值型態中。</p>
 <ul>
 <li>BYTE  (8bits)</li>
 <li>WORD  (16bits)</li>
@@ -248,7 +248,7 @@
 <li>QWORD (64bits)</li>
 </ul>
 <p>上述四者前面加上S(signed)就能儲存正負數</p>
-<h2 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h2><ul>
+<h1 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h1><ul>
 <li>mov   </li>
 <li>movzx</li>
 <li>movsx</li>
@@ -260,7 +260,7 @@
 <li>sar: 向右<strong>算數</strong>移位</li>
 <li>neg</li>
 </ul>
-<h2 id="產生執行檔過程"><a href="#產生執行檔過程" class="headerlink" title="產生執行檔過程"></a>產生執行檔過程</h2><table>
+<h1 id="產生執行檔過程"><a href="#產生執行檔過程" class="headerlink" title="產生執行檔過程"></a>產生執行檔過程</h1><table>
 <thead>
 <tr>
 <th>Source File</th>
@@ -279,9 +279,9 @@
 <td>.exe</td>
 </tr>
 </tbody></table>
-<h2 id="基本程式碼"><a href="#基本程式碼" class="headerlink" title="基本程式碼"></a>基本程式碼</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.data</span><br><span class="line">; 變數</span><br><span class="line">.code</span><br><span class="line">; 程式碼</span><br><span class="line">main EQU start@0</span><br><span class="line">main PROC</span><br><span class="line">    ; mov eax, 20</span><br><span class="line">main ENDP</span><br><span class="line">END main</span><br></pre></td></tr></table></figure>
+<h1 id="基本程式碼"><a href="#基本程式碼" class="headerlink" title="基本程式碼"></a>基本程式碼</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.data</span><br><span class="line">; 變數</span><br><span class="line">.code</span><br><span class="line">; 程式碼</span><br><span class="line">main EQU start@0</span><br><span class="line">main PROC</span><br><span class="line">    ; mov eax, 20</span><br><span class="line">main ENDP</span><br><span class="line">END main</span><br></pre></td></tr></table></figure>
 
-<h2 id="Make-bat"><a href="#Make-bat" class="headerlink" title="Make.bat"></a>Make.bat</h2><blockquote>
+<h1 id="Make-bat"><a href="#Make-bat" class="headerlink" title="Make.bat"></a>Make.bat</h1><blockquote>
 <p>組譯來源檔案(assemble)</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ML &#x2F;c &#x2F;coff &#x2F;Zi   code.asm </span><br></pre></td></tr></table></figure>
@@ -289,8 +289,8 @@
 <p>連結目標檔案(linking)</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LINK &#x2F;INCREMENTAL:no &#x2F;debug &#x2F;subsystem:console &#x2F;entry:start &#x2F;out:code.exe code.obj Kernel32.lib irvine32.lib user32.lib</span><br></pre></td></tr></table></figure>
-<h2 id="windbg"><a href="#windbg" class="headerlink" title="windbg"></a>windbg</h2><p>windbg可以讓我們使用assembler及linker產生出來的執行檔來逐行檢視程式執行狀況。常用到的有<strong>watch</strong>，可以監控register目前數值狀況。<strong>Memory</strong>，可以看宣告變數的數值狀況</p>
-<h2 id="來源"><a href="#來源" class="headerlink" title="來源"></a>來源</h2><ul>
+<h1 id="windbg"><a href="#windbg" class="headerlink" title="windbg"></a>windbg</h1><p>windbg可以讓我們使用assembler及linker產生出來的執行檔來逐行檢視程式執行狀況。常用到的有<strong>watch</strong>，可以監控register目前數值狀況。<strong>Memory</strong>，可以看宣告變數的數值狀況</p>
+<h1 id="來源"><a href="#來源" class="headerlink" title="來源"></a>來源</h1><ul>
 <li>暫存器圖: <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10222729">https://ithelp.ithome.com.tw/articles/10222729</a></li>
 </ul>
 
@@ -374,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%AB%E5%AD%98%E5%99%A8Register"><span class="nav-number">1.</span> <span class="nav-text">暫存器Register</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Purpose-Register"><span class="nav-number">1.1.</span> <span class="nav-text">General Purpose Register</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segment-Register"><span class="nav-number">1.2.</span> <span class="nav-text">Segment Register</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">2.</span> <span class="nav-text">變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B"><span class="nav-number">3.</span> <span class="nav-text">資料型態</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">基本指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A2%E7%94%9F%E5%9F%B7%E8%A1%8C%E6%AA%94%E9%81%8E%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">產生執行檔過程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">6.</span> <span class="nav-text">基本程式碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Make-bat"><span class="nav-number">7.</span> <span class="nav-text">Make.bat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windbg"><span class="nav-number">8.</span> <span class="nav-text">windbg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%86%E6%BA%90"><span class="nav-number">9.</span> <span class="nav-text">來源</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9A%AB%E5%AD%98%E5%99%A8Register"><span class="nav-number">1.</span> <span class="nav-text">暫存器Register</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Purpose-Register"><span class="nav-number">1.0.1.</span> <span class="nav-text">General Purpose Register</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segment-Register"><span class="nav-number">1.0.2.</span> <span class="nav-text">Segment Register</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">2.</span> <span class="nav-text">變數</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B"><span class="nav-number">3.</span> <span class="nav-text">資料型態</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">基本指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A2%E7%94%9F%E5%9F%B7%E8%A1%8C%E6%AA%94%E9%81%8E%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">產生執行檔過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">6.</span> <span class="nav-text">基本程式碼</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Make-bat"><span class="nav-number">7.</span> <span class="nav-text">Make.bat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windbg"><span class="nav-number">8.</span> <span class="nav-text">windbg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%86%E6%BA%90"><span class="nav-number">9.</span> <span class="nav-text">來源</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
