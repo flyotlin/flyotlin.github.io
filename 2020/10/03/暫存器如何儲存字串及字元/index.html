@@ -20,21 +20,27 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="題目Uva 100- The 3n+1 problem f(n) &#x3D; 3n+1 , n為奇數 –(1)n&#x2F;2 , n為偶數 –(2) 簡而言之，題目會input兩個數字(a, b)，藉由f(n)的運算，請你輸出依照input順序輸出a b， 以及在a b之間最長的cycle length的長度。">
+  <meta name="description" content="前言在上組合語言的時候，有個作業原本是要把一個變數初始化為十六進位的eeea，但眼殘如我不小心看成是要初始化為一個字串eeea。於是我稍微去理解了一下究竟在register以及memory中是如何儲存字串及字元的，也是因為這樣才誕生了這篇文章。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uva 100 - The 3n + 1 Problem">
-<meta property="og:url" content="http://example.com/2020/02/05/Uva%20100%20-%20The%203n%20+%201%20Problem/index.html">
+<meta property="og:title" content="暫存器如何儲存字串及字元?">
+<meta property="og:url" content="http://example.com/2020/10/03/%E6%9A%AB%E5%AD%98%E5%99%A8%E5%A6%82%E4%BD%95%E5%84%B2%E5%AD%98%E5%AD%97%E4%B8%B2%E5%8F%8A%E5%AD%97%E5%85%83/index.html">
 <meta property="og:site_name" content="Flyot&#39;s Blog">
-<meta property="og:description" content="題目Uva 100- The 3n+1 problem f(n) &#x3D; 3n+1 , n為奇數 –(1)n&#x2F;2 , n為偶數 –(2) 簡而言之，題目會input兩個數字(a, b)，藉由f(n)的運算，請你輸出依照input順序輸出a b， 以及在a b之間最長的cycle length的長度。">
+<meta property="og:description" content="前言在上組合語言的時候，有個作業原本是要把一個變數初始化為十六進位的eeea，但眼殘如我不小心看成是要初始化為一個字串eeea。於是我稍微去理解了一下究竟在register以及memory中是如何儲存字串及字元的，也是因為這樣才誕生了這篇文章。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-02-05T00:00:00.000Z">
+<meta property="og:image" content="https://imgur.com/9rOgRsh.png">
+<meta property="og:image" content="https://imgur.com/EngZ6J6.png">
+<meta property="og:image" content="https://imgur.com/OOFLoDC.png">
+<meta property="og:image" content="https://imgur.com/25H9Spj.png">
+<meta property="og:image" content="https://imgur.com/TxKqrlE.jpg">
+<meta property="article:published_time" content="2020-10-03T00:00:00.000Z">
 <meta property="article:modified_time" content="2020-10-03T15:45:02.860Z">
 <meta property="article:author" content="FlyotLin">
-<meta property="article:tag" content="OJ解題">
-<meta property="article:tag" content="Uva">
+<meta property="article:tag" content="組合語言">
+<meta property="article:tag" content="assembly">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgur.com/9rOgRsh.png">
 
-<link rel="canonical" href="http://example.com/2020/02/05/Uva%20100%20-%20The%203n%20+%201%20Problem/">
+<link rel="canonical" href="http://example.com/2020/10/03/%E6%9A%AB%E5%AD%98%E5%99%A8%E5%A6%82%E4%BD%95%E5%84%B2%E5%AD%98%E5%AD%97%E4%B8%B2%E5%8F%8A%E5%AD%97%E5%85%83/">
 
 
 <script id="page-configurations">
@@ -47,7 +53,7 @@
   };
 </script>
 
-  <title>Uva 100 - The 3n + 1 Problem | Flyot's Blog</title>
+  <title>暫存器如何儲存字串及字元? | Flyot's Blog</title>
   
 
 
@@ -168,7 +174,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/05/Uva%20100%20-%20The%203n%20+%201%20Problem/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/03/%E6%9A%AB%E5%AD%98%E5%99%A8%E5%A6%82%E4%BD%95%E5%84%B2%E5%AD%98%E5%AD%97%E4%B8%B2%E5%8F%8A%E5%AD%97%E5%85%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/hsdeer.jpg">
@@ -181,7 +187,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Uva 100 - The 3n + 1 Problem
+          暫存器如何儲存字串及字元?
         </h1>
 
         <div class="post-meta">
@@ -190,23 +196,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-05T00:00:00+00:00">2020-02-05</time>
+              <time title="創建時間：2020-10-03 00:00:00 / 修改時間：15:45:02" itemprop="dateCreated datePublished" datetime="2020-10-03T00:00:00+00:00">2020-10-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-10-03 15:45:02" itemprop="dateModified" datetime="2020-10-03T15:45:02+00:00">2020-10-03</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%A7%A3%E9%A1%8C/" itemprop="url" rel="index"><span itemprop="name">解題</span></a>
+                  <a href="/categories/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">組合語言</span></a>
                 </span>
             </span>
 
@@ -221,24 +221,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p><a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=36">Uva 100- The 3n+1 problem</a></p>
-<p>f(n) = 3n+1 , n為奇數 –(1)<br>n/2 , n為偶數 –(2)</p>
-<p>簡而言之，題目會input兩個數字(a, b)，藉由f(n)的運算，請你輸出依照input順序輸出a b，</p>
-<p>以及在a b之間最長的cycle length的長度。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在上組合語言的時候，有個作業原本是要把一個變數初始化為十六進位的eeea，但眼殘如我不小心看成是要初始化為一個字串eeea。於是我稍微去理解了一下究竟在register以及memory中是如何儲存字串及字元的，也是因為這樣才誕生了這篇文章。</p>
 <a id="more"></a>
-<p>*cycle length:</p>
-<p>假設n=22，會依序跑出 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1，</p>
-<p>則f(22)的cycle length為16</p>
-<h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><p>題目給的定義為:</p>
-<p>f(n) = 3n+1 , n為奇數 –(1)<br>n/2 , n為偶數 –(2)</p>
-<p>f(n)結束的條件為n=1的時候</p>
-<p>其實這個定義在數學上叫做考拉茲猜想，有興趣可以去維基百科上了解更多。</p>
-<p>所以只要用while迴圈，條件為n != 1時，重複做(1) (2)的兩件事，直到n=1即可。</p>
-<p>要特別注意的是輸入的兩個數第二個不一定會大於第一個，所以程式中要注意</p>
-<p>兩個數的順序。</p>
-<p>此外，題目輸出時，前兩個要按照輸入時的順序輸出，然後第三個再輸出最長</p>
-<p>的cycle length。</p>
-<h2 id="C-程式碼"><a href="#C-程式碼" class="headerlink" title="C++程式碼"></a>C++程式碼</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">three_n</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp, aa, bb;</span><br><span class="line">        <span class="keyword">if</span>(a &gt; b)</span><br><span class="line">        &#123;</span><br><span class="line">            bb = a;</span><br><span class="line">            aa = b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            aa = a;</span><br><span class="line">            bb = b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = aa; i &lt;= bb; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            max = (three_n(i) &gt; max) ? three_n(i) : max;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">three_n</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n != <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            n = <span class="number">3</span>*n+<span class="number">1</span>;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            n /= <span class="number">2</span>;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="字元是如何儲存的"><a href="#字元是如何儲存的" class="headerlink" title="字元是如何儲存的?"></a>字元是如何儲存的?</h1><p>一般字元是以1byte(8bits)的大小，用ascii code的編碼方式儲存在register及memory中的。</p>
+<p>要驗證字元如何儲存的真實性可以寫簡單的assembly code加上windbg輕易的驗證。</p>
+<h3 id="驗證"><a href="#驗證" class="headerlink" title="驗證"></a>驗證</h3><ol>
+<li><p>首先我先寫了個簡單的程式碼，把字元A放到eax暫存器中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TITLE example.asm</span><br><span class="line">INCLUDE Irvine32.inc</span><br><span class="line">.data</span><br><span class="line"></span><br><span class="line">.code</span><br><span class="line">main        EQU start@0</span><br><span class="line">main PROC</span><br><span class="line">    mov eax, &#39;A&#39;</span><br><span class="line">main ENDP</span><br><span class="line">END main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用windbg來看看eax會變成怎樣</p>
+<blockquote>
+<p>還沒執行mov eax, ‘A’時，eax為一個隨機的初始值<br><img src="https://imgur.com/9rOgRsh.png"><br>執行後，eax內的值的確變成了A的ascii code編碼65。這也驗證了字元在register及memory中是以1byte、ascii code編碼的方式儲存的。<br><img src="https://imgur.com/EngZ6J6.png"></p>
+</blockquote>
+</li>
+</ol>
+<h1 id="字串是如何儲存的"><a href="#字串是如何儲存的" class="headerlink" title="字串是如何儲存的?"></a>字串是如何儲存的?</h1><p>先說結論，字串依然是把字元一個一個存在register或memory中，每個字元仍舊佔1個byte。所以拿”EEEA”為例，總共會佔4*1byte(32bits)。</p>
+<p>接下來我們來猜測一下記憶體中”EEEA”會如何被儲存。</p>
+<p>以下是我們猜測的記憶體中儲存方式的示意圖，位元組順序以常見的little endian小端序表示。</p>
+<table>
+<thead>
+<tr>
+<th>E</th>
+<th>E</th>
+<th>E</th>
+<th>A</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>69</td>
+<td>69</td>
+<td>69</td>
+<td>65</td>
+</tr>
+<tr>
+<td>高</td>
+<td></td>
+<td></td>
+<td>記憶體位置低</td>
+</tr>
+</tbody></table>
+<p>接下來我們就來驗證一下這個是否正確吧!</p>
+<h3 id="驗證-1"><a href="#驗證-1" class="headerlink" title="驗證"></a>驗證</h3><ol>
+<li><p>我們同樣先寫一個簡單的assembly來開始我們的實驗。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TITLE example.asm</span><br><span class="line">INCLUDE Irvine32.inc</span><br><span class="line">.data</span><br><span class="line"></span><br><span class="line">.code</span><br><span class="line">main        EQU start@0</span><br><span class="line">main PROC</span><br><span class="line">    mov eax, &#39;EEEA&#39; ; 把字串EEEA放到eax中</span><br><span class="line">main ENDP</span><br><span class="line">END main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用windbg來看看eax暫存器狀況 </p>
+<blockquote>
+<p>還沒執行mov eax, ‘EEEA’，為隨機的初始值<br><img src="https://imgur.com/OOFLoDC.png"><br>咦?執行後，eax變成了<strong>1162167617</strong><br><img src="https://imgur.com/25H9Spj.png"></p>
+</blockquote>
+</li>
+</ol>
+<p>我們回想起剛剛的表格，可以得到這個公式:<br><img src="https://imgur.com/TxKqrlE.jpg">符合我們剛剛表格中的的猜測。</p>
+<p><strong>公式解釋:</strong></p>
+<ul>
+<li>以16為底是因為記憶體內儲存皆是以16進位來表示。</li>
+<li>指數的6, 4, 2則是在16進位之下做了shift left的動作。不懂的話可以先從二進位的shift運算來了解。</li>
+</ul>
+
     </div>
 
     
@@ -247,8 +287,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/OJ%E8%A7%A3%E9%A1%8C/" rel="tag"># OJ解題</a>
-              <a href="/tags/Uva/" rel="tag"># Uva</a>
+              <a href="/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/" rel="tag"># 組合語言</a>
+              <a href="/tags/assembly/" rel="tag"># assembly</a>
           </div>
 
         
@@ -257,13 +297,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/04/Uva%2010633%20-%20Rare%20Easy%20Problem/" rel="prev" title="Uva 10633 - Rare Easy Problem">
-      <i class="fa fa-chevron-left"></i> Uva 10633 - Rare Easy Problem
+    <a href="/2020/10/02/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%801/" rel="prev" title="組合語言筆記-1">
+      <i class="fa fa-chevron-left"></i> 組合語言筆記-1
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/06/Uva%20455%20-%20Periodic%20Strings/" rel="next" title="Uva 455 - Periodic Strings">
-      Uva 455 - Periodic Strings <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -322,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%83%B3%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解題想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.</span> <span class="nav-text">C++程式碼</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E5%85%83%E6%98%AF%E5%A6%82%E4%BD%95%E5%84%B2%E5%AD%98%E7%9A%84"><span class="nav-number">2.</span> <span class="nav-text">字元是如何儲存的?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%97%E8%AD%89"><span class="nav-number">2.0.1.</span> <span class="nav-text">驗證</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%84%B2%E5%AD%98%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">字串是如何儲存的?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%97%E8%AD%89-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">驗證</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
