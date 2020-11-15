@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,10 +232,15 @@
 
       
           <h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><p>題目要問的是給定一個金額，請問用{1, 5, 10, 25, 50}來湊的話，共有幾種不同的湊法。<br>這題其實就是無限背包問題，所以會用到動態規劃的概念。只是把背包的限制重量變成題目欲湊出的金額。物品變成面額。<br>然後面額的數量沒有限制，隨你喜歡用多少就用多少。</p>
-<p>可以分別考慮加上每個面額後，能湊出該金額的方法數會如何變化。<br>也就是以下的這個轉移式:</p>
+<p>可以分別考慮加上每個面額後，能湊出該金額的方法數會如何變化。<br>也就是以下的這個<strong>轉移式</strong>:</p>
 <blockquote>
 <p><strong>dp(金額) += dp(金額 - 當下面額)</strong></p>
 </blockquote>
+<p>如果先考慮一個固定金額，再考慮每加上不同面額，方法數會有甚麼改變(就是把for迴圈內外顛倒)。這樣會造成在考慮方法數的時候會重複計算。</p>
+<p>拿<strong>十元</strong>來舉例</p>
+<p>首先加上 <strong>$9</strong> 的方法數(<strong>$1</strong> * 9, <strong>$5</strong> + <strong>$1</strong> * 4)</p>
+<p>再加上 <strong>$5</strong> 的方法數(<strong>$1</strong> * 5, <strong>$5</strong>)</p>
+<p>會發現 <strong>$9</strong> 的第二個方法跟 <strong>$5</strong> 的第一個方法，在分別加上 <strong>$1</strong> 以及 <strong>$5</strong> 後會變成相同的方法，這樣就重複計算到了。</p>
 <h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> dp[<span class="number">8000</span>] = &#123;<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> coins[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">50</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8000</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j - coins[i] &gt;= <span class="number">0</span>)</span><br><span class="line">                dp[j] += dp[j - coins[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> money;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; money) </span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dp[money] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
@@ -286,7 +291,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -382,7 +387,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -482,7 +487,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -577,7 +582,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -678,7 +683,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -949,7 +954,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1048,7 +1053,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-15 16:53:39" itemprop="dateModified" datetime="2020-11-15T16:53:39+00:00">2020-11-15</time>
+                <time title="修改時間：2020-11-15 17:02:14" itemprop="dateModified" datetime="2020-11-15T17:02:14+00:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
