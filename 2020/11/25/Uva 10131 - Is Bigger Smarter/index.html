@@ -20,23 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Loop用ECX作為counter，下面的範例code會loop 5次 1234    mov ecx, 5L:    ; do something    loop L">
+  <meta name="description" content="題目題目給大象的體重及智商，求體重嚴格遞增，智商嚴格遞減的最長子集合(subset)。 解題想法我們可以先將體重由小到大排序(也可以智商由大到小排序，後面就反著做)，再對智商做LDS。但要注意體重跟智商的值有可能相等，所以在對智商做LDS的時候，也要注意體重沒有取到相等的值。 參考: Longest Increasing Subsequence 程式碼12345678910111213141516">
 <meta property="og:type" content="article">
-<meta property="og:title" content="組合語言筆記-2">
-<meta property="og:url" content="http://example.com/2020/10/18/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%802/index.html">
+<meta property="og:title" content="Uva 10131 - Is Bigger Smarter?">
+<meta property="og:url" content="http://example.com/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/index.html">
 <meta property="og:site_name" content="Flyot&#39;s Blog">
-<meta property="og:description" content="Loop用ECX作為counter，下面的範例code會loop 5次 1234    mov ecx, 5L:    ; do something    loop L">
+<meta property="og:description" content="題目題目給大象的體重及智商，求體重嚴格遞增，智商嚴格遞減的最長子集合(subset)。 解題想法我們可以先將體重由小到大排序(也可以智商由大到小排序，後面就反著做)，再對智商做LDS。但要注意體重跟智商的值有可能相等，所以在對智商做LDS的時候，也要注意體重沒有取到相等的值。 參考: Longest Increasing Subsequence 程式碼12345678910111213141516">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/QwEUbdA.png">
-<meta property="article:published_time" content="2020-10-18T00:00:00.000Z">
+<meta property="article:published_time" content="2020-11-25T00:00:00.000Z">
 <meta property="article:modified_time" content="2020-11-24T16:28:30.140Z">
 <meta property="article:author" content="FlyotLin">
-<meta property="article:tag" content="組合語言">
-<meta property="article:tag" content="assembly">
+<meta property="article:tag" content="OJ解題">
+<meta property="article:tag" content="Uva">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/QwEUbdA.png">
 
-<link rel="canonical" href="http://example.com/2020/10/18/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%802/">
+<link rel="canonical" href="http://example.com/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/">
 
 
 <script id="page-configurations">
@@ -49,7 +47,7 @@
   };
 </script>
 
-  <title>組合語言筆記-2 | Flyot's Blog</title>
+  <title>Uva 10131 - Is Bigger Smarter? | Flyot's Blog</title>
   
 
 
@@ -170,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/18/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%802/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/hsdeer.jpg">
@@ -183,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          組合語言筆記-2
+          Uva 10131 - Is Bigger Smarter?
         </h1>
 
         <div class="post-meta">
@@ -193,7 +191,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-10-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-18T00:00:00+00:00">2020-10-18</time>
+              <time title="創建時間：2020-11-25 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-25T00:00:00+00:00">2020-11-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -208,7 +206,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">組合語言</span></a>
+                  <a href="/categories/%E8%A7%A3%E9%A1%8C/" itemprop="url" rel="index"><span itemprop="name">解題</span></a>
                 </span>
             </span>
 
@@ -221,8 +219,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/10/18/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%802/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/18/組合語言2/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/25/Uva 10131 - Is Bigger Smarter/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -237,38 +235,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><p>用ECX作為counter，下面的範例code會loop 5次</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    mov ecx, 5</span><br><span class="line">L:</span><br><span class="line">    ; do something</span><br><span class="line">    loop L</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="FLAGS"><a href="#FLAGS" class="headerlink" title="FLAGS"></a>FLAGS</h1><p>ALU中有這些FLAG，反映算術運算後的結果</p>
-<ul>
-<li>Sign Flag: 當結果變成負數</li>
-<li>Carry Flag: 當unsigned numbers超出範圍</li>
-<li>Zero Flag: 當結果變成0</li>
-<li>Overflow Flag: 當signed numbers超出範圍</li>
-</ul>
-<h1 id="ESI-Source-Index"><a href="#ESI-Source-Index" class="headerlink" title="ESI(Source Index)"></a>ESI(Source Index)</h1><p>[esi] : dereference該位址的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov al, [esi]   ; [esi] dereference the value of the address of esi</span><br></pre></td></tr></table></figure>
-<h2 id="OFFSET"><a href="#OFFSET" class="headerlink" title="OFFSET"></a>OFFSET</h2><p>回傳一個指標</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.data</span><br><span class="line">array BYTE 1000 DUP(?)</span><br><span class="line">.code</span><br><span class="line">mov esi, OFFSET array</span><br></pre></td></tr></table></figure>
-<h1 id="STACK"><a href="#STACK" class="headerlink" title="STACK"></a>STACK</h1><p>Stack在記憶體中的位置。其中你寫的程式碼、在程式碼中.data部分宣告的變數也會被存在記憶體如下圖的相對位置中。</p>
-<p><img src="https://i.imgur.com/QwEUbdA.png"></p>
-<p>從上圖也可以發現，在stack越上面的元素，他的<strong>位址就越小</strong>。</p>
-<h2 id="基本stack操作"><a href="#基本stack操作" class="headerlink" title="基本stack操作"></a>基本stack操作</h2><p>push及pop的大小由暫存器、記憶體決定，但只能是4 byte或是2 byte</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push eax</span><br><span class="line">pop eax</span><br></pre></td></tr></table></figure>
-<h2 id="ESP-Stack-pointer"><a href="#ESP-Stack-pointer" class="headerlink" title="ESP (Stack pointer)"></a>ESP (Stack pointer)</h2><p>指向stack中的最上面的元素的一個暫存器。</p>
-<h2 id="巢狀迴圈"><a href="#巢狀迴圈" class="headerlink" title="巢狀迴圈"></a>巢狀迴圈</h2><p>stack一個很常見的用途就是巢狀迴圈。</p>
-<p>外層迴圈要進入內層迴圈時，先把外層迴圈counter(ECX)的值push進stack中，等到離開內層迴圈後再將外層迴圈counter(ECX)的值pop出來。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    mov ecx, 5</span><br><span class="line"></span><br><span class="line">L1:</span><br><span class="line">    ; do something</span><br><span class="line">    push ecx</span><br><span class="line">    </span><br><span class="line">    mov ecx 10</span><br><span class="line">L2:</span><br><span class="line">    ; do something else</span><br><span class="line">    loop L2</span><br><span class="line"></span><br><span class="line">    pop ecx</span><br><span class="line">    loop L1</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-<h1 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h1><p>有點類似高階語言的function</p>
-<h2 id="怎麼寫一個Procedure"><a href="#怎麼寫一個Procedure" class="headerlink" title="怎麼寫一個Procedure"></a>怎麼寫一個Procedure</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[function名稱] PROC</span><br><span class="line">; something you want procedures to do</span><br><span class="line">[function名稱] ENDP</span><br></pre></td></tr></table></figure>
-
-<h2 id="CALL"><a href="#CALL" class="headerlink" title="CALL"></a>CALL</h2><p>呼叫你的Procedure，把call XX那行接下來要執行的指令的位址先push到stack，ESP就會指向那個位址。再把EIP指向XX Procedure的第一行</p>
-<h2 id="RET"><a href="#RET" class="headerlink" title="RET"></a>RET</h2><p>把stack最上面的元素pop給EIP。其實就等於pop EIP。</p>
-<h2 id="USES"><a href="#USES" class="headerlink" title="USES"></a>USES</h2><p>在進入procedure前保存指定的暫存器的值，結束後再回復到進入procedure前的值。</p>
-<p>算是個語法糖。剛進到procedure的時候先push到stack，離開時再從stack中pop出來。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Sample PROC USES EAX</span><br><span class="line">; do something in procedure</span><br><span class="line">Sample ENDP</span><br></pre></td></tr></table></figure>
+        <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>題目給大象的體重及智商，求體重<strong>嚴格</strong>遞增，智商<strong>嚴格</strong>遞減的最長子集合(subset)。</p>
+<h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><p>我們可以先將體重由小到大排序(也可以智商由大到小排序，後面就反著做)，再對智商做LDS。但要注意體重跟智商的值有可能相等，所以在對智商做LDS的時候，也要注意體重沒有取到相等的值。</p>
+<p>參考: <a target="_blank" rel="noopener" href="http://web.ntnu.edu.tw/~algo/LongestIncreasingSubsequence.html">Longest Increasing Subsequence</a></p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num, weight, iq;</span><br><span class="line">&#125; triple;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(triple &amp;a, triple &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.weight &lt; b.weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> length[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> prev_iq[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, no = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;triple&gt; elephants;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b) &#123;</span><br><span class="line">        triple tmp;</span><br><span class="line">        tmp.num = no++;</span><br><span class="line">        tmp.weight = a;</span><br><span class="line">        tmp.iq = b;</span><br><span class="line">        elephants.push_back(tmp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(elephants.begin(), elephants.end(), cmp);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elephants.size(); i++) &#123;</span><br><span class="line">        length[i] = <span class="number">1</span>;</span><br><span class="line">        prev_iq[i] = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elephants.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (elephants[i].iq &lt; elephants[j].iq &amp;&amp; elephants[i].weight &gt; elephants[j].weight) &#123;   <span class="comment">// 前面條件為智商，後面條件為確保體重沒取到相等的</span></span><br><span class="line">                <span class="keyword">if</span> (length[j] + <span class="number">1</span> &gt; length[i]) &#123;</span><br><span class="line">                    length[i] = length[j] + <span class="number">1</span>;</span><br><span class="line">                    prev_iq[i] = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lis_length = <span class="number">-1234</span>, maxIdx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elephants.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (length[i] &gt; lis_length) &#123;</span><br><span class="line">            lis_length = length[i];</span><br><span class="line">            maxIdx = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; lis_length &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; lis;</span><br><span class="line">    <span class="keyword">while</span> (maxIdx != <span class="number">-1</span>) &#123;</span><br><span class="line">        lis.push_back(maxIdx);</span><br><span class="line">        maxIdx = prev_iq[maxIdx];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lis.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; elephants[lis[i]].num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -277,8 +247,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%80/" rel="tag"># 組合語言</a>
-              <a href="/tags/assembly/" rel="tag"># assembly</a>
+              <a href="/tags/OJ%E8%A7%A3%E9%A1%8C/" rel="tag"># OJ解題</a>
+              <a href="/tags/Uva/" rel="tag"># Uva</a>
           </div>
 
         
@@ -287,13 +257,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/04/Uva%2010157%20-%20Expressions/" rel="prev" title="Uva 10157 - Expressions">
-      <i class="fa fa-chevron-left"></i> Uva 10157 - Expressions
+    <a href="/2020/11/16/Uva%20674%20-%20Coin%20Change/" rel="prev" title="Uva 674 - Coin Change">
+      <i class="fa fa-chevron-left"></i> Uva 674 - Coin Change
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/11/16/Uva%20674%20-%20Coin%20Change/" rel="next" title="Uva 674 - Coin Change">
-      Uva 674 - Coin Change <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -359,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Loop"><span class="nav-number">1.</span> <span class="nav-text">Loop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FLAGS"><span class="nav-number">2.</span> <span class="nav-text">FLAGS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ESI-Source-Index"><span class="nav-number">3.</span> <span class="nav-text">ESI(Source Index)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OFFSET"><span class="nav-number">3.1.</span> <span class="nav-text">OFFSET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#STACK"><span class="nav-number">4.</span> <span class="nav-text">STACK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%ACstack%E6%93%8D%E4%BD%9C"><span class="nav-number">4.1.</span> <span class="nav-text">基本stack操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ESP-Stack-pointer"><span class="nav-number">4.2.</span> <span class="nav-text">ESP (Stack pointer)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A2%E7%8B%80%E8%BF%B4%E5%9C%88"><span class="nav-number">4.3.</span> <span class="nav-text">巢狀迴圈</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Procedures"><span class="nav-number">5.</span> <span class="nav-text">Procedures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E5%AF%AB%E4%B8%80%E5%80%8BProcedure"><span class="nav-number">5.1.</span> <span class="nav-text">怎麼寫一個Procedure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CALL"><span class="nav-number">5.2.</span> <span class="nav-text">CALL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RET"><span class="nav-number">5.3.</span> <span class="nav-text">RET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USES"><span class="nav-number">5.4.</span> <span class="nav-text">USES</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%83%B3%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解題想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.</span> <span class="nav-text">程式碼</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -498,9 +465,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://example.com/2020/10/18/%E7%B5%84%E5%90%88%E8%AA%9E%E8%A8%802/";
-    this.page.identifier = "2020/10/18/組合語言2/";
-    this.page.title = "組合語言筆記-2";
+    this.page.url = "http://example.com/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/";
+    this.page.identifier = "2020/11/25/Uva 10131 - Is Bigger Smarter/";
+    this.page.title = "Uva 10131 - Is Bigger Smarter?";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
