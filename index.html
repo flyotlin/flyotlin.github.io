@@ -163,6 +163,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/01/Uva%2010039%20-%20Railroads/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/hsdeer.jpg">
+      <meta itemprop="name" content="FlyotLin">
+      <meta itemprop="description" content="Love programming, cat, and helping others">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flyot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/01/Uva%2010039%20-%20Railroads/" class="post-title-link" itemprop="url">Uva 10039 - Railroads</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-12-01 00:00:00 / 修改時間：10:05:57" itemprop="dateCreated datePublished" datetime="2020-12-01T00:00:00+00:00">2020-12-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%A7%A3%E9%A1%8C/" itemprop="url" rel="index"><span itemprop="name">解題</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/12/01/Uva%2010039%20-%20Railroads/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/01/Uva 10039 - Railroads/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h2><p>這題輸入滿複雜的，分為三個部分，會先輸入有幾組測資。</p>
+<ul>
+<li><p>PART 1:<br>  城市名稱</p>
+</li>
+<li><p>PART 2:<br>  列車資訊</p>
+</li>
+<li><p>PART 3:<br>  出發時間 出發城市 抵達城市</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/01/Uva%2010039%20-%20Railroads/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -194,7 +289,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,9 +327,14 @@
 
       
           <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>題目給大象的體重及智商，求體重<strong>嚴格</strong>遞增，智商<strong>嚴格</strong>遞減的最長子集合(subset)。</p>
-<h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><p>我們可以先將體重由小到大排序(也可以智商由大到小排序，後面就反著做)，再對智商做LDS。但要注意體重跟智商的值有可能相等，所以在對智商做LDS的時候，也要注意體重沒有取到相等的值。</p>
-<p>參考: <a target="_blank" rel="noopener" href="http://web.ntnu.edu.tw/~algo/LongestIncreasingSubsequence.html">Longest Increasing Subsequence</a></p>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num, weight, iq;</span><br><span class="line">&#125; triple;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(triple &amp;a, triple &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.weight &lt; b.weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> length[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> prev_iq[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, no = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;triple&gt; elephants;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b) &#123;</span><br><span class="line">        triple tmp;</span><br><span class="line">        tmp.num = no++;</span><br><span class="line">        tmp.weight = a;</span><br><span class="line">        tmp.iq = b;</span><br><span class="line">        elephants.push_back(tmp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(elephants.begin(), elephants.end(), cmp);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elephants.size(); i++) &#123;</span><br><span class="line">        length[i] = <span class="number">1</span>;</span><br><span class="line">        prev_iq[i] = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elephants.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (elephants[i].iq &lt; elephants[j].iq &amp;&amp; elephants[i].weight &gt; elephants[j].weight) &#123;   <span class="comment">// 前面條件為智商，後面條件為確保體重沒取到相等的</span></span><br><span class="line">                <span class="keyword">if</span> (length[j] + <span class="number">1</span> &gt; length[i]) &#123;</span><br><span class="line">                    length[i] = length[j] + <span class="number">1</span>;</span><br><span class="line">                    prev_iq[i] = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lis_length = <span class="number">-1234</span>, maxIdx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elephants.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (length[i] &gt; lis_length) &#123;</span><br><span class="line">            lis_length = length[i];</span><br><span class="line">            maxIdx = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; lis_length &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; lis;</span><br><span class="line">    <span class="keyword">while</span> (maxIdx != <span class="number">-1</span>) &#123;</span><br><span class="line">        lis.push_back(maxIdx);</span><br><span class="line">        maxIdx = prev_iq[maxIdx];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lis.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; elephants[lis[i]].num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/25/Uva%2010131%20-%20Is%20Bigger%20Smarter/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -284,7 +384,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -379,7 +479,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -474,7 +574,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -570,7 +670,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -670,7 +770,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -765,7 +865,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -866,7 +966,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-29 09:35:36" itemprop="dateModified" datetime="2020-11-29T09:35:36+00:00">2020-11-29</time>
+                <time title="修改時間：2020-12-01 10:05:57" itemprop="dateModified" datetime="2020-12-01T10:05:57+00:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1015,93 +1115,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/12/Xrandr%20%E2%80%94%20Linux%E8%9E%A2%E5%B9%95%E6%96%B9%E5%90%91%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/hsdeer.jpg">
-      <meta itemprop="name" content="FlyotLin">
-      <meta itemprop="description" content="Love programming, cat, and helping others">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flyot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/12/Xrandr%20%E2%80%94%20Linux%E8%9E%A2%E5%B9%95%E6%96%B9%E5%90%91%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8/" class="post-title-link" itemprop="url">Xrandr — Linux螢幕方向設定教學</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-09-12 16:00:00" itemprop="dateCreated datePublished" datetime="2020-09-12T16:00:00+00:00">2020-09-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-10-01 16:47:55" itemprop="dateModified" datetime="2020-10-01T16:47:55+00:00">2020-10-01</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/09/12/Xrandr%20%E2%80%94%20Linux%E8%9E%A2%E5%B9%95%E6%96%B9%E5%90%91%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/12/Xrandr — Linux螢幕方向設定教學/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>不知道大家有沒有過打開ubuntu之後，發現整個螢幕的顯示方向從原本的水平變成垂直，或者是方向整個不對的經驗。像是下面這樣…</p>
-<p><img src="https://imgur.com/a/fvFLX7n" alt="fdfd"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/12/Xrandr%20%E2%80%94%20Linux%E8%9E%A2%E5%B9%95%E6%96%B9%E5%90%91%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1173,7 +1186,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
