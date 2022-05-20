@@ -2,13 +2,13 @@
 title: 'About Me'
 ---
 
-I am flyotlin, you can call me Nick also, a junior in NCU CSIE now.
+I am flyotlin, you can call me Nick also, a junior in [NCU CSIE](https://www.csie.ncu.edu.tw/) now.
 
 Love coding, loving things, and helping other people.
 
-I'm now interested in software engineering, software testing, DevOps, and Distributed System.
+I'm now interested in Software Engineering, Software Testing, DevOps, and Distributed System.
 
-Experiences in Linux, C/C++, Python, Javascript (Vue, Node.js), Golang, SQL, Docker, Unit test, CI/CD, Ansible.
+Experiences in Linux, C/C++, Python, JavaScript (Vue, Node.js), Golang, SQL, Docker, Unit test, CI/CD, Ansible.
 
 My GitHub: https://github.com/flyotlin
 
