@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://flyotlin.github.io/sitemap.xml

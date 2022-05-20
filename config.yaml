@@ -1,0 +1,63 @@
+baseURL: 'https://flyotlin.github.io/'
+languageCode: 'en-us'
+title: flyotlin's Blog
+theme: "hugo-PaperMod"
+enableEmoji: true
+enableRobotsTXT: true
+hasCJKLanguage: true
+
+paginate: 15
+
+params:
+    env: production
+    DateFormat: "2006-01-02"
+    ShowLastMod: true
+    ShowToc: true
+    TocOpen: true
+    VisitCount: true
+    socialIcons:
+        - name: github
+          url: "https://github.com/flyotlin"
+        - name: twitter
+          url:  "https://twitter.com/flyotlin"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/po-ru-lin-956334194/"
+        - name: email
+          url: "flyotlin@gmail.com"
+        - name: osu
+          url: "https://www.facebook.com/profile.php?id=100027782410997"
+    homeInfoParams:
+        Title: flyotlin's Blog
+        Content: 48 65 6C 6C 6F 2C 20 77 6F 72 6C 64 21
+    ShowCodeCopyButtons: true
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+menu:
+    main:
+        - identifier: archives
+          name: Archives
+          url: /archives/
+          weight: 10
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 20
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 30
+        - identifier: about
+          name: About
+          url: /about/
+          weight: 30
+        - identifier: cv
+          name: CV
+          url: /cv/
+          weight: 30

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>解題 on flyotlin&#39;s Blog</title>
+    <link>https://flyotlin.github.io/categories/%E8%A7%A3%E9%A1%8C/</link>
+    <description>Recent content in 解題 on flyotlin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Dec 2020 17:01:22 +0800</lastBuildDate><atom:link href="https://flyotlin.github.io/categories/%E8%A7%A3%E9%A1%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10537 - The Toll! Revisited</title>
+      <link>https://flyotlin.github.io/posts/10537-the-toll-revisited/</link>
+      <pubDate>Fri, 18 Dec 2020 17:01:22 +0800</pubDate>
+      
+      <guid>https://flyotlin.github.io/posts/10537-the-toll-revisited/</guid>
+      <description>解題想法 這題用的演算法主要是dijkstra，求權重圖的最短路徑，但不能有負邊。 由於題目給的是到終點時的貨物數量，要我們求起點出發要有多少貨</description>
+    </item>
+    
+  </channel>
+</rss>
