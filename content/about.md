@@ -8,7 +8,7 @@ Love coding, loving things, and helping other people.
 
 I'm now interested in Software Engineering, Software Testing, DevOps, and Distributed System.
 
-Experiences in Linux, C/C++, Python, JavaScript (Vue, Node.js), Golang, SQL, Docker, Unit test, CI/CD, Ansible.
+Experienced in Linux, C/C++, Python, JavaScript (Vue, Node.js), Golang, SQL, Docker, Unit test, CI/CD, Ansible.
 
 My GitHub: https://github.com/flyotlin
 
