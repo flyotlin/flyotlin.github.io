@@ -7,8 +7,7 @@ tags:
 ---
 [https://leetcode.com/problems/longest-substring-without-repeating-characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
 
-Solution
-========
+## Solution
 
 使用 sliding window + set 就能解決這個問題，只是一開始被前幾天解的 dp 題 (找「最長回文子字串 longest palandromic substring」) 擾亂思緒，往列舉出所有長度的子字串，再一個個的檢查是否 valid 的方向思考。
 
@@ -20,20 +19,11 @@ Solution
 
 遇到看過的字元，就持續 left +=1，直到當前的 s(left, right) 不包含重複的字元。
 
-[leetcode/3-longest-substring-without-repeating-characters/1.cpp at main · flyotlin/leetcode
--------------------------------------------------------------------------------------------
+[https://github.com/flyotlin/leetcode/blob/main/3-longest-substring-without-repeating-characters/1.cpp?source=post_page-----14ac3154b289---------------------------------------](https://github.com/flyotlin/leetcode/blob/main/3-longest-substring-without-repeating-characters/1.cpp?source=post_page-----14ac3154b289---------------------------------------)
 
-### Contribute to flyotlin/leetcode development by creating an account on GitHub.
+## Note
 
-github.com
-
-](https://github.com/flyotlin/leetcode/blob/main/3-longest-substring-without-repeating-characters/1.cpp?source=post_page-----14ac3154b289---------------------------------------)
-
-Note
-====
-
-std::set
---------
+### std::set
 
 ```
 // 初始化  
@@ -56,11 +46,11 @@ s.erase(1);
 s.clear();
 ```
 
-std::unordered\_set
--------------------
+### std::unordered\_set
 
-Refs
-====
+TBD
+
+## Refs
 
 *   [https://shengyu7697.github.io/std-set/](https://shengyu7697.github.io/std-set/)
 
