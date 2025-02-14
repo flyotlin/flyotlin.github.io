@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on flyotlin's Blog</title><link>https://flyotlin.github.io/posts/</link><description>Recent content in Posts on flyotlin's Blog</description><generator>Hugo -- 0.143.1</generator><language>en-us</language><lastBuildDate>Fri, 14 Feb 2025 17:09:16 +0800</lastBuildDate><atom:link href="https://flyotlin.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Go Hugo</title><link>https://flyotlin.github.io/posts/go-hugo/</link><pubDate>Fri, 14 Feb 2025 17:09:16 +0800</pubDate><guid>https://flyotlin.github.io/posts/go-hugo/</guid><description>&lt;p>Go Hugo 是一個基於 Golang 產生靜態網站的 SSG (static site generation) 框架&lt;/p>
-&lt;h2 id="quick-start">quick start&lt;/h2>
-&lt;h3 id="基本概念">基本概念&lt;/h3>
+&lt;h2 id="基本概念">基本概念&lt;/h2>
 &lt;ul>
-&lt;li>site
-一個 go hugo 產生的靜態網站&lt;/li>
-&lt;li>content
-網站中的靜態頁面、靜態內容&lt;/li>
-&lt;li>configuration
-設定 go hugo 產生的靜態網站 (site configuration)&lt;/li>
+&lt;li>site&lt;/li>
 &lt;/ul>
-&lt;h3 id="重要操作">重要操作&lt;/h3>
+&lt;p>一個 go hugo 產生的靜態網站&lt;/p>
 &lt;ul>
-&lt;li>create a site
-&lt;code>hugo new site&lt;/code>&lt;/li>
-&lt;li>add content
-&lt;code>hugo new content &amp;lt;path-to-content&amp;gt;&lt;/code>，網站的主題 (theme) 通常會被放在 &lt;code>/themes&lt;/code> 底下。
-content 通常會用 &lt;a href="https://gohugo.io/content-management/front-matter/">font matter&lt;/a> 格式，將 metadata 加在 content 上&lt;/li>
-&lt;li>start site
-&lt;code>hugo server&lt;/code> 可以啟動一個開發用的網站&lt;/li>
-&lt;li>configure site
-透過 site configuration 設定 hugo 產生的靜態網站&lt;/li>
-&lt;li>publish
-&lt;code>hugo&lt;/code> 指令會將靜態網站 build 出來，將最終的靜態資源 (html, css, images, files) 放在 &lt;code>/public&lt;/code> 資料夾中&lt;/li>
-&lt;/ul></description></item><item><title>Git Submodules</title><link>https://flyotlin.github.io/posts/git-submodules/</link><pubDate>Fri, 14 Feb 2025 16:53:14 +0800</pubDate><guid>https://flyotlin.github.io/posts/git-submodules/</guid><description>&lt;h2 id="git-submodules">git submodules&lt;/h2>
+&lt;li>content&lt;/li>
+&lt;/ul>
+&lt;p>網站中的靜態頁面、靜態內容&lt;/p>
+&lt;ul>
+&lt;li>configuration&lt;/li>
+&lt;/ul>
+&lt;p>設定 go hugo 產生的靜態網站 (site configuration)&lt;/p>
+&lt;h2 id="重要操作">重要操作&lt;/h2>
+&lt;ul>
+&lt;li>create a site&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>hugo new site&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>add content&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>hugo new content &amp;lt;path-to-content&amp;gt;&lt;/code>，網站的主題 (theme) 通常會被放在 &lt;code>/themes&lt;/code> 底下。&lt;/p></description></item><item><title>Git Submodules</title><link>https://flyotlin.github.io/posts/git-submodules/</link><pubDate>Fri, 14 Feb 2025 16:53:14 +0800</pubDate><guid>https://flyotlin.github.io/posts/git-submodules/</guid><description>&lt;h2 id="git-submodules">git submodules&lt;/h2>
 &lt;p>當你的專案需要依賴於外部的 git repo、library 時，可以透過 git submodule 將該外部依賴引入至你的專案中。&lt;/p>
 &lt;p>git submodule 會將外部依賴的某個 commit 引入到你的 repo 中。&lt;/p>
 &lt;h2 id="how-to-use">How to use?&lt;/h2>
