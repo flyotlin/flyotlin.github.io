@@ -2,7 +2,7 @@
 title: 'About Me'
 ---
 
-I am flyotlin, you can call me Nick also, a junior in [NCU CSIE](https://www.csie.ncu.edu.tw/) now.
+I am flyotlin, you can call me Nick also, a graduate student in [NYCU CS](https://cs.nycu.edu.tw/) now.
 
 Love coding, loving things, and helping other people.
 
@@ -12,7 +12,7 @@ Experienced in Linux, C/C++, Python, JavaScript (Vue, Node.js), Golang, SQL, Doc
 
 My GitHub: https://github.com/flyotlin
 
-My LinkedIn: https://www.linkedin.com/in/po-ru-lin-956334194/
+My LinkedIn: https://www.linkedin.com/in/flyotlin
 
 My Email: flyotlin@gmail.com
 
