@@ -6,7 +6,9 @@ enableEmoji: true
 enableRobotsTXT: true
 hasCJKLanguage: true
 
-paginate: 15
+# fix after hugo v0.128.0
+pagination:
+  pagerSize: 15
 
 params:
     env: production

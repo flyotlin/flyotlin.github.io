@@ -1,6 +1,6 @@
 ---
 title: 淺談 Race Condition
-date: 20202/04/10
+date: 2020-04-10T00:00:00+08:00
 draft: true
 ---
 以下給出一個比較一般化的定義

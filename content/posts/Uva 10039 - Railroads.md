@@ -1,6 +1,6 @@
 ---
 title: Uva 10039 - Railroads
-date: 2020-12-1T17:01:22+08:00
+date: 2020-12-01T17:01:22+08:00
 # tags: 
 # - OJ解題 
 # - Uva
