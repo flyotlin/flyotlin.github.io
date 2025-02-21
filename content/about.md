@@ -10,10 +10,7 @@ I'm now interested in Software Engineering, Software Testing, DevOps, and Distri
 
 Experienced in Linux, C/C++, Python, JavaScript (Vue, Node.js), Golang, SQL, Docker, Unit test, CI/CD, Ansible.
 
-My GitHub: https://github.com/flyotlin
-
-My LinkedIn: https://www.linkedin.com/in/flyotlin
-
-My Email: flyotlin@gmail.com
-
-PS., Learning Functional Programming (Haskell) now.
+Here's my contact information:
+- [GitHub](https://github.com/flyotlin)
+- [LinkedIn](https://www.linkedin.com/in/flyotlin)
+- [Email](mailto:flyotlin@gmail.com)
