@@ -24,9 +24,9 @@ params:
         - name: twitter
           url:  "https://twitter.com/flyotlin"
         - name: linkedin
-          url: "https://www.linkedin.com/in/po-ru-lin-956334194/"
+          url: "https://www.linkedin.com/in/flyotlin/"
         - name: email
-          url: "flyotlin@gmail.com"
+          url: "mailto:flyotlin@gmail.com"
         - name: osu
           url: "https://osu.ppy.sh/users/6125103"
     homeInfoParams:
